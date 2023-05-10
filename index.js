@@ -43,9 +43,9 @@ console.log(reverseString("hello"));
 function isPalindrome(str) {
     const revString = str.split('').reverse().join('');
     if (str == revString) {
-        console.log(`${str} is a palindrome`);
+        return true;
     } else {
-        console.log(`${str} is not a palindrome`);
+        return false;
     }
 }
-isPalindrome("racecar");
+console.log(isPalindrome("racecar"));
