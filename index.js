@@ -38,8 +38,8 @@ function reverseString(str) {
 }
 console.log(reverseString("hello"));
 
-/* Challenge 2: Validate a Palindrome */
-
+////////////////////////////////////////////////////////////
+console.log("<----Challenge 2: Validate a Palindrome---->");
 function isPalindrome(str) {
     const revString = str.split('').reverse().join('');
     if (str == revString) {
@@ -49,3 +49,82 @@ function isPalindrome(str) {
     }
 }
 console.log(isPalindrome("racecar"));
+
+
+
+////////////////////////////////////////////////////////////
+console.log("<----Challenge 3: Integer Reversal---->");
+function reverseInt(val) {
+    let valStr = val.toString().split('').reverse().join('');
+    return parseInt(valStr) * Math.sign(val);
+}
+console.log(reverseInt(-8084));
+
+
+
+///////////////////////////////////////////////////////////
+console.log("<----Challenge 4: Capitalize First Letters---->");
+function strCaps(str) {
+    return str
+        .toLowerCase()
+        .split(' ')
+        .map(word => word[0].toUpperCase() + word.substring(1))
+        .join(' ');
+
+    /*
+    const strArr = str.toLowerCase().split(' ');
+    for(let i = 0; i < strArr.length; i++) {
+        strArr[i] = strArr[i].substring(0,1).toUpperCase() +
+        strArr[i].substring(1);
+    }
+    return strArr.join(' '); */
+}
+console.log(strCaps("i love javascript"));
+
+
+
+//////////////////////////////////////////////////////////
+console.log("<----Challenge 5: Find the Max Character---->");
+function maxChar(str) {
+    const charMap = {};
+    let maxNum = 0;
+    let maxChar = '';
+
+    str.split('').forEach(function(char) {
+        if(charMap[char]) {
+            charMap[char]++;
+        } else {
+            charMap[char] = 1;
+        }
+    });
+    for(let char in charMap) {
+        //debugger - run file on terminal (repl annd c)
+        if(charMap[char] > maxNum) {
+            maxNum = charMap[char];
+            maxChar = char;
+        }
+    }
+
+    return maxChar;
+}
+console.log(maxChar("Character"));
+
+
+
+/////////////////////////////////////////////////////////
+console.log("<----Challenge 6: FizzBuzz---->");
+function fizzBuzzz() {
+    for (let i = 1; i <= 100; i++) {
+        if (i % 15 === 0) {
+            console.log('FizzBuzz')
+        } else if (i % 3 === 0) {
+            console.log('Fizz');
+        } else if (i % 5 === 0) {
+            console.log('Buzz')
+        } else {
+            console.log(i);
+        }
+    }
+}
+
+fizzBuzzz();
